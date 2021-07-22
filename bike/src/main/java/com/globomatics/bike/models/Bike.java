@@ -1,5 +1,7 @@
 package com.globomatics.bike.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.Entity;
@@ -10,8 +12,9 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Bike {
-
+    /* primary key */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -20,8 +23,10 @@ public class Bike {
     private String phone;
     private String model;
     private String serialNumber;
-    private BigDecimal purchasePrice;
-    private Date purchasedate;
+    private BigDecimal purchase_price;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
+    private Date purchase_date;
     private boolean contact;
 
     public String getName() {
@@ -65,19 +70,19 @@ public class Bike {
     }
 
     public BigDecimal getPurchasePrice() {
-        return purchasePrice;
+        return purchase_price;
     }
 
     public void setPurchasePrice(BigDecimal purchasePrice) {
-        this.purchasePrice = purchasePrice;
+        this.purchase_price = purchasePrice;
     }
 
     public Date getPurchasedate() {
-        return purchasedate;
+        return purchase_date;
     }
 
     public void setPurchasedate(Date purchasedate) {
-        this.purchasedate = purchasedate;
+        this.purchase_date = purchasedate;
     }
 
     public boolean isContact() {
