@@ -26,3 +26,12 @@ PRIMARY KEY CLUSTERED
 GO
 
 
+USE [Bike]
+GO
+INSERT [dbo].[bike] ([id], [contact], [email], [model], [name], [phone], [purchase_date], [purchase_price], [serial_number]) VALUES (1, 1, N'jeff@bikes.com', N'Globo MTB 29 Full Su', N'Jeff Miller', N'328-443-5555', CAST(N'2000-01-10T00:00:00.000' AS DateTime), CAST(1100 AS Numeric(18, 0)), NULL)
+GO
+INSERT [dbo].[bike] ([id], [contact], [email], [model], [name], [phone], [purchase_date], [purchase_price], [serial_number]) VALUES (2, 0, N'samantha@bikes.com', N'Globo Carbon Fiber R', N'Samantha Davis', N'448-397-5555', CAST(N'2010-02-02T00:00:00.000' AS DateTime), CAST(1999 AS Numeric(18, 0)), NULL)
+GO
+INSERT [dbo].[bike] ([id], [contact], [email], [model], [name], [phone], [purchase_date], [purchase_price], [serial_number]) VALUES (3, 1, N'dave@bikes.com', N'Globo Time Trial Bla', N'Dave Warren', N'563-891-5555', CAST(N'2019-10-09T00:00:00.000' AS DateTime), CAST(2100 AS Numeric(18, 0)), NULL)
+GO
+
